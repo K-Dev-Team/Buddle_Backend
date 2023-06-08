@@ -1,0 +1,5 @@
+create table test_free_board(
+uid int primary key AUTO_INCREMENT ,
+content text
+)
+
