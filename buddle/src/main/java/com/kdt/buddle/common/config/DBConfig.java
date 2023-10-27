@@ -1,4 +1,4 @@
-package com.kdt.buddle.common;
+package com.kdt.buddle.common.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;

@@ -24,8 +24,8 @@ public class TestCtl {
       return resMap;
     }
 
-    resMap.put("uid", testDto.getUid());
-    resMap.put("content", testDto.getContent());
+    resMap.put("uid", testDto.getIdx());
+    resMap.put("content", testDto.getAccount());
     resMap.put("retCode", "000");
     resMap.put("retMsg", "정상 처리");
 

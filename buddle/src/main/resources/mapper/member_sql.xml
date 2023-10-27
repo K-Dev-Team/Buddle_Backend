@@ -3,10 +3,10 @@
 
 
 
-<mapper namespace="com.kdt.buddle.test.TestDao">
+<mapper namespace="com.kdt.buddle.member.MemberDao">
 
-<select id="selectTest" resultType="testDto">
-    select * from member limit 1;
+<select id="getMemberList" resultType="List">
+    select * from member;
 </select>
 
 </mapper>

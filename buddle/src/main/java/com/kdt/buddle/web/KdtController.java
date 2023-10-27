@@ -34,7 +34,6 @@ public class KdtController {
     log.info("/kdtController.do 데이타수신 ");
     log.info("=========================================================");
 
-    ObjectMapper om = new ObjectMapper();
     Map<Object, Object> resMap = new HashMap<>();
 
     try {

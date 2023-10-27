@@ -4,6 +4,10 @@ import lombok.Data;
 
 @Data
 public class TestDto {
-  private int uid;
-  private String content;
+  private int idx;
+  private String account;
+  private String password;
+  private String birth;
+  private String name;
+
 }
