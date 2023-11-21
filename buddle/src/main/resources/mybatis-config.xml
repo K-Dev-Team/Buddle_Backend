@@ -5,9 +5,13 @@
 <configuration>
     <typeAliases>
         <typeAlias alias="testDto" type="com.kdt.buddle.test.TestDto"/>
+        <typeAlias alias="meditationResDto" type="com.kdt.buddle.meditation.dto.MeditationResDto"/>
+        <typeAlias alias="meditationDto" type="com.kdt.buddle.meditation.dto.MeditationDto"/>
+        <typeAlias alias="meditationCmtDto" type="com.kdt.buddle.meditation.dto.MeditationCmtDto"/>
     </typeAliases>
 
     <mappers>
         <mapper resource="mapper/test_sql.xml"/>
+        <mapper resource="mapper/meditation_sql.xml"/>
     </mappers>
 </configuration>

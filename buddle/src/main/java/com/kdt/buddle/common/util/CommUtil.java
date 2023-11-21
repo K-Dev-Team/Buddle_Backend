@@ -2,6 +2,9 @@ package com.kdt.buddle.common.util;
 
 import lombok.extern.log4j.Log4j2;
 
+import java.time.LocalDate;
+import java.time.temporal.WeekFields;
+import java.util.Locale;
 import java.util.Map;
 
 @Log4j2
@@ -24,4 +27,9 @@ public class CommUtil {
   }
 
 
+  public int getWeekNumberInMonth(LocalDate date) {
+    WeekFields weekFields = WeekFields.of(Locale.getDefault());
+
+    return date.get(weekFields.weekOfMonth());
+  }
 }

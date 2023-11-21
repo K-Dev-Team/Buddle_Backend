@@ -6,7 +6,7 @@ import lombok.Data;
 public class TestDto {
   private int idx;
   private String account;
-  private String password;
+//  private String password;
   private String birth;
   private String name;
 

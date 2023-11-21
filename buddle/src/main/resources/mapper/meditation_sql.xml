@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.kdt.buddle.meditation.service.impl.MeditationDao">
+
+    <resultMap id="meditationCmtMap" type="com.kdt.buddle.meditation.dto.MeditationCmtDto">
+        <result property="mdt_idx" column="mdt_idx"/>
+        <result property="mdt_cmt_idx" column="mdt_cmt_idx"/>
+        <result property="contents" column="contents"/>
+        <result property="member_idx" column="member_idx"/>
+        <result property="reg_date" column="reg_date"/>
+        <result property="udt_date" column="udt_date"/>
+        <result property="del_yn" column="del_yn"/>
+    </resultMap>
+
+
+    <select id="getWeeklyMeditation" parameterType="meditationDto" resultType="meditationResDto">
+        select *
+        from meditation_list
+        where reg_month = #{reg_month}
+          and reg_week_num = #{reg_week_num}
+    </select>
+
+    <select id="getMeditationCmtList" parameterType="Integer" resultMap="meditationCmtMap">
+        select *
+        from meditation_cmt_list
+        where mdt_idx = #{mdt_idx}
+    </select>
+
+    <insert id="meditationWrite" parameterType="meditationDto">
+        insert into meditation_list(contents, member_idx, reg_date, udt_date, reg_month, reg_week_num)
+        values (#{contents}, 1, now(), now(), #{reg_month}, #{reg_week_num})
+    </insert>
+</mapper>

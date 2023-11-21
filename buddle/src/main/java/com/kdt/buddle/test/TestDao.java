@@ -4,13 +4,19 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class TestDao {
-  @Autowired
-  SqlSessionTemplate sqlSessionTemplate;
+  private final SqlSessionTemplate sqlSessionTemplate;
 
-  public TestDto getTestData() {
-    return sqlSessionTemplate.selectOne("com.kdt.buddle.test.TestDao.selectTest");
+  @Autowired
+  public TestDao(SqlSessionTemplate sqlSessionTemplate) {
+    this.sqlSessionTemplate = sqlSessionTemplate;
+  }
+
+  public List<TestDto> getTestData() {
+    return sqlSessionTemplate.selectList("com.kdt.buddle.test.TestDao.selectTest");
   }
 
 }

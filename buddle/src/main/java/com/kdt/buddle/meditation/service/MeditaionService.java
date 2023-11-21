@@ -1,13 +1,12 @@
 package com.kdt.buddle.meditation.service;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
-import java.util.Map;
+import com.kdt.buddle.meditation.dto.*;
+
+import java.util.List;
 
 public interface MeditaionService {
 
-  public Map<String, Object> getMeditationList(Map<String, Object> jsonMap, HttpServletRequest request, HttpServletResponse response) throws Exception;
-  public Map<String, Object> getMeditationDetils(Map<String, Object> jsonMap, HttpServletRequest request, HttpServletResponse response) throws Exception;
-
+  public MeditationResDto getWeeklyMeditaion(MeditationReqDto meditationReqDto) throws Exception;
+  public List<MeditationCmtDto> getMeditationCmtList(Integer mdt_idx) throws  Exception;
+  public int meditationWrite(MeditationWriteDto meditationWriteDto) throws Exception;
 }

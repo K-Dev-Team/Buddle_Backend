@@ -7,14 +7,17 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 
 @SpringBootApplication
 public class BuddleApplication extends SpringBootServletInitializer {
+  public static void main(String[] args) {
+
+    SpringApplication.run(BuddleApplication.class, args);
+
+  }
 
   @Override
   protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+
     return application.sources(BuddleApplication.class);
   }
 
-	public static void main(String[] args) {
-		SpringApplication.run(BuddleApplication.class, args);
-	}
 
 }
